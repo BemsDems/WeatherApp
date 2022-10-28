@@ -13,8 +13,7 @@ class WeatherConditionsAndTemperature extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.red,
+    return SizedBox(
       width: SizeConfig().screenWidth,
       height: SizeConfig().getHeight(170),
       child: Padding(
@@ -23,7 +22,6 @@ class WeatherConditionsAndTemperature extends StatelessWidget {
           buildWhen: (previous, current) => !(current is ErrorHomeState),
           builder: (context, state) {
             return state.maybeMap(loaded: (weatherForecast) {
-              log('${weatherForecast.weatherForecastFiveDaysForCity.list.first.weather.first.description}');
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -39,33 +37,9 @@ class WeatherConditionsAndTemperature extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // Container(
-                      //   width: 100,
-                      //   child: Stack(
-                      //     alignment: Alignment.center,
-                      //     children: [
-                      //       Padding(
-                      //         padding: const EdgeInsets.only(left: 75, bottom: 50),
-                      //         child: Text(
-                      //           '°C',
-                      //           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300, color: Color.fromRGBO(48, 51, 69, 1)),
-                      //         ),
-                      //       ),
-                      //       Text(
-                      //         '${weatherForecast.weatherForecastForCity.list.first.temp.day.toInt()}',
-                      //         style: TextStyle(fontSize: 60, fontWeight: FontWeight.w700, color: Color.fromRGBO(48, 51, 69, 1)),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // Text(
-                      //   '${weatherForecast.weatherForecastForCity.list.first.weather.first.main}',
-                      //   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, color: Color.fromRGBO(48, 51, 69, 1)),
-                      // ),
                       Container(
-                        // color: Colors.red,
-                        width: 100,
-                        height: 100,
+                        width: SizeConfig().getWidth(100),
+                        height: SizeConfig().getWidth(100),
                         child: Row(
                           children: [
                             Column(
